@@ -47,11 +47,13 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          'Spoqa Han Sans Neo',
           'Noto Sans KR',
           ...defaultTheme.fontFamily.sans
         ],
         mono: [
           'D2Coding',
+          'Cascadia Code',
           ...defaultTheme.fontFamily.mono
         ]
       }
