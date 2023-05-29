@@ -86,3 +86,29 @@ button {
     @apply font-awesome content-['\f02b'];
   }
 }
+
+/* Footnotes */
+div[id^="tistoryFootnoteLayer"] {
+  font-family: var(--text-font);
+  font-size: 0.9rem !important;
+  word-wrap: normal;
+  word-break: keep-all;
+  color: black;
+}
+div.footnotes {
+  margin-top: 30px;
+  border-top: 2px var(--h-color) solid;
+  padding-top: 10px;
+}
+/* Blockquotes */
+#content .contents_style blockquote {
+  font-size: 1rem !important;
+}
+/* Fancybox */
+span > img {
+  cursor: zoom-in;
+}
+/* Misc */
+hr[data-ke-style], #tt-body-page hr[data-ke-style] {
+  cursor: auto !important;
+}
