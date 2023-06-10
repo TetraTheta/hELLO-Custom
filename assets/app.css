@@ -86,6 +86,8 @@ button {
     @apply font-awesome content-['\f02b'];
   }
 }
+/* Fix Bugs */
+
 
 /* Footnotes */
 div[id^="tistoryFootnoteLayer"] {
@@ -108,7 +110,10 @@ div.footnotes {
 span > img {
   cursor: zoom-in;
 }
-/* Misc */
+/* Horizontal Rule */
 hr[data-ke-style], #tt-body-page hr[data-ke-style] {
   cursor: auto !important;
+}
+hr[data-ke-style='style2'], #tt-body-page hr[data-ke-style='style2'] {
+  height: 19px;
 }
