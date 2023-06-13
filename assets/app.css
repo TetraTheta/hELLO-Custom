@@ -86,8 +86,6 @@ button {
     @apply font-awesome content-['\f02b'];
   }
 }
-/* Fix Bugs */
-
 
 /* Footnotes */
 div[id^="tistoryFootnoteLayer"] {
@@ -102,18 +100,26 @@ div.footnotes {
   border-top: 2px var(--h-color) solid;
   padding-top: 10px;
 }
+
 /* Blockquotes */
 #content .contents_style blockquote {
   font-size: 1rem !important;
 }
+
 /* Fancybox */
-span > img {
+#content span > img {
   cursor: zoom-in;
 }
+
 /* Horizontal Rule */
-hr[data-ke-style], #tt-body-page hr[data-ke-style] {
+#content .contents_style hr[data-ke-style], #tt-body-page hr[data-ke-style] {
   cursor: auto !important;
 }
-hr[data-ke-style='style2'], #tt-body-page hr[data-ke-style='style2'] {
+#content .contents_style hr[data-ke-style='style2'], #tt-body-page hr[data-ke-style='style2'] {
   height: 19px;
+}
+
+/* List */
+#content .contents_style ol[data-ke-list-type], #content .contents_style ul[data-ke-list-type] {
+  list-style-position: outside !important; /* TODO: Try not to use !important */
 }
