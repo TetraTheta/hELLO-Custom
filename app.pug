@@ -43,7 +43,7 @@ html#hELLO(
 
     script(fixed).
       if (! ('TTDARK' in localStorage)) {
-        localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'
+        localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'Y' //- Always use dark theme
       }
 
       window.TTDARK = localStorage.TTDARK === 'Y'
