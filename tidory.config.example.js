@@ -40,9 +40,9 @@ module.exports = {
      */
     variableSettings: {
       sidebar: true,
-      'foldable-category': true,
-      'foldable-reply': true,
-      width: '720',
+      'foldable-category': false,
+      'foldable-reply': false,
+      width: '980',
       toc: true,
       scrollspy: true,
       hljs: 'xcode',
