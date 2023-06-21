@@ -43,8 +43,11 @@ div[id^="tistoryFootnoteLayer"] {
 }
 div.footnotes {
   margin-top: 30px;
-  border-top: 2px var(--h-color) solid;
+  border-top: 1px rgb(230 230 233 / var(--tw-text-opacity)) dashed;
   padding-top: 10px;
+}
+ol.footnotes {
+  list-style: decimal;
 }
 
 /* Blockquotes */
