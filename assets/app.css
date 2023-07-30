@@ -18,19 +18,19 @@ a, button { @apply pointer-events-auto !important; }
 }
 
 @layer utilities {
+  .font-awesome { @apply font-['Font_Awesome_6_Free']; }
   .text-hidden { @apply absolute w-px h-px -m-px overflow-hidden !important; }
   .text-overflow-hidden { @apply overflow-hidden whitespace-nowrap text-ellipsis; }
-  .font-awesome { @apply font-['Font_Awesome_6_Free'] font-bold; }
-  .fa-chevron-right { @apply font-awesome content-['\f105']; }
-  .fa-circle-arrow-right { @apply font-awesome content-['\f0a9']; }
-  .fa-circle-arrow-down { @apply font-awesome content-['\f0ab']; }
-  .fa-heart { @apply font-awesome content-['\f004']; }
-  .fa-share-nodes { @apply font-awesome content-['\f1e0']; }
-  .fa-chart-pie { @apply font-awesome content-['\f200']; }
-  .fa-wrench { @apply font-awesome content-['\f0ad']; }
-  .fa-ellipsis { @apply font-awesome content-['\f141']; }
+  .fa-chart-pie { @apply font-awesome font-bold content-['\f200']; }
+  .fa-chevron-right { @apply font-awesome font-bold content-['\f105']; }
+  .fa-circle-arrow-down { @apply font-awesome font-bold content-['\f0ab']; }
+  .fa-circle-arrow-right { @apply font-awesome font-bold content-['\f0a9']; }
+  .fa-ellipsis { @apply font-awesome font-bold content-['\f141']; }
+  .fa-heart { @apply font-awesome font-bold content-['\f004']; }
+  .fa-share-nodes { @apply font-awesome font-bold content-['\f1e0']; }
   .fa-star { @apply font-awesome content-['\f005']; }
-  .fa-tag { @apply font-awesome content-['\f02b']; }
+  .fa-tag { @apply font-awesome font-bold content-['\f02b']; }
+  .fa-wrench { @apply font-awesome font-bold content-['\f0ad']; }
 }
 
 /* Footnotes */
@@ -58,17 +58,4 @@ ol.footnotes {
 /* Fancybox */
 #content span > img {
   cursor: zoom-in;
-}
-
-/* Horizontal Rule */
-#content .contents_style hr[data-ke-style], #tt-body-page hr[data-ke-style] {
-  cursor: auto !important;
-}
-#content .contents_style hr[data-ke-style='style2'], #tt-body-page hr[data-ke-style='style2'] {
-  height: 19px;
-}
-
-/* List */
-#content .contents_style ol[data-ke-list-type], #content .contents_style ul[data-ke-list-type] {
-  list-style-position: outside !important; /* TODO: Try not to use !important */
 }
