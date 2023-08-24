@@ -1,6 +1,6 @@
 doctype html
 
-html#hELLO(
+html#hELLO.dark(
   x-data='{ dark: TTDARK, loading: true }'
   x-init='setTimeout(() => loading = false, 100)'
   lang='ko'
@@ -39,13 +39,9 @@ html#hELLO(
       }
 
     script(fixed).
-      if (! ('TTDARK' in localStorage)) {
-        localStorage.TTDARK = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Y' : 'N'
-      }
-
+      //- Force dark mode
+      if (! ('TTDARK' in localStorage)) { localStorage.TTDARK = 'Y' }
       window.TTDARK = localStorage.TTDARK === 'Y'
-
-      document.documentElement.classList.toggle('dark', TTDARK)
 
   body(
     id='[##_body_id_##]'
