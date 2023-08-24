@@ -377,7 +377,11 @@ style(once='content')
 
         ol[data-ke-list-type],
         ul[data-ke-list-type] {
-          @apply flex flex-col gap-y-1 list-inside my-5;
+          @apply flex flex-col gap-y-1 list-outside my-5 ml-4;
+
+          li {
+            @apply first-line:block;
+          }
 
           ol[data-ke-list-type],
           ul[data-ke-list-type] {
