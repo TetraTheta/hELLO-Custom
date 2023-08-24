@@ -18,7 +18,7 @@ button {
 }
 
 .lazyloaded {
-  @apply animate-none bg-h-100;
+  @apply animate-none bg-transparent;
 }
 
 .lazyload:not([src]) {
