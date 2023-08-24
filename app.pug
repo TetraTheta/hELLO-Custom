@@ -43,6 +43,19 @@ html#hELLO.dark(
       //- Force dark mode
       if (! ('TTDARK' in localStorage)) { localStorage.TTDARK = 'Y' }
       window.TTDARK = localStorage.TTDARK === 'Y'
+    
+    script(fixed).
+      //- Modify footnote style
+      (function() {
+        tistoryFootnote.showSuper = tistoryFootnote.show
+        tistoryFootnote.show = function(anchor, entryId, noteId) {
+          this.showSuper(anchor, entryId, noteId)
+          var layer = document.getElementById('tistoryFootnoteLayer_' + entryId + '_' + noteId)
+          layer.style.color = '#000'
+          layer.style.fontFamily = getComputedStyle(document.documentElement).fontFamily
+          layer.style.top = getOffsetTop(anchor) - layer.offsetHeight + 'px'
+        }
+      })()
 
   body(
     id='[##_body_id_##]'
