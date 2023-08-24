@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
    <information>
-      <name>hELLO</name>
-      <version>4.2.0</version>
+      <name>hELLO Custom</name>
+      <version>4.2.0-Custom</version>
       <description>
-         <![CDATA[ⓒ 2020-2023. Sangwoo Jeong.]]>
+         <![CDATA[ⓒ 2020-2023. Sangwoo Jeong & TetraTheta.]]>
       </description>
       <license>
          <![CDATA[MIT]]>
@@ -65,7 +65,7 @@
          <label>카테고리 접기/펼치기</label>
          <description><![CDATA[ 카테고리 접기/펼치기 ]]></description>
          <type>BOOL</type>
-         <default>true</default>
+         <default>false</default>
        </variable>
      </variablegroup>
      <variablegroup name="글">
@@ -74,7 +74,7 @@
          <label>너비</label>
          <description><![CDATA[ 너비 ]]></description>
          <type>STRING</type>
-         <default>720</default>
+         <default>980</default>
        </variable>
        <variable>
          <name>toc</name>
@@ -109,7 +109,7 @@
          <label>댓글 접기/펼치기</label>
          <description><![CDATA[ 댓글 접기/펼치기 ]]></description>
          <type>BOOL</type>
-         <default>true</default>
+         <default>false</default>
        </variable>
      </variablegroup>
   </variables>
@@ -120,5 +120,8 @@
     <lengthOfRecentNotice>32</lengthOfRecentNotice>
     <lengthOfRecentEntry>32</lengthOfRecentEntry>
     <lengthOfRecentComment>32</lengthOfRecentComment>
+    <tree>
+      <contentWidth>980</contentWidth>
+    </tree>
   </default>
 </skin>
