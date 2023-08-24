@@ -86,3 +86,8 @@ button {
     @apply font-awesome content-['\f005'];
   }
 }
+
+/* Fancybox */
+#content span > img {
+  cursor: zoom-in;
+}

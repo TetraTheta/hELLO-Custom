@@ -42,6 +42,8 @@ script(once='alpine-content-component').
       this.setPositionToImages()
 
       this.highlightCodeBlocks()
+
+      this.replaceLightbox()
     },
 
     /**
@@ -49,6 +51,21 @@ script(once='alpine-content-component').
      */
     highlightCodeBlocks () {
       this.$article.querySelectorAll('pre code').forEach(hljs.highlightElement)
+    },
+
+    /**
+     * Replace Lightbox to Fancybox
+     */
+    replaceLightbox () {
+      this.$article.querySelectorAll('span').forEach(this.setFancybox)
+    },
+
+    setFancybox ($sp) {
+      if ('lightbox' in $sp.dataset) {
+        delete $sp.dataset.lightbox
+        $sp.dataset.fancybox = 'fancybox'
+        $sp.dataset.src = $sp.getElementsByTagName('img')[0].dataset.src
+      }
     },
 
     /**
