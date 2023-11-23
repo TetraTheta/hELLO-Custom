@@ -18,7 +18,7 @@ button {
 }
 
 .lazyloaded {
-  @apply animate-none bg-h-100;
+  @apply animate-none bg-transparent;
 }
 
 .lazyload:not([src]) {
@@ -85,4 +85,27 @@ button {
   .fa-star {
     @apply font-awesome content-['\f005'];
   }
+}
+
+/* Fancybox */
+#content span > img {
+  cursor: zoom-in;
+}
+
+/* Footnotes */
+/* TODO: Merge this into 'views/Main/Post/Permalink/Post/Content.pug' */
+div[id^="tistoryFootnoteLayer"] {
+  font-family: var(--text-font);
+  font-size: 0.9rem !important;
+  word-wrap: normal;
+  word-break: keep-all;
+  color: black;
+}
+div.footnotes {
+  margin-top: 30px;
+  border-top: 1px rgb(230 230 233 / var(--tw-text-opacity)) dashed;
+  padding-top: 10px;
+}
+ol.footnotes {
+  list-style: decimal;
 }
