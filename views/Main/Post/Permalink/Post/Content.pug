@@ -21,7 +21,7 @@ script(once='alpine-content-component').
      *
      * @property {array} headings
      */
-    supportHeadings: '.contents_style > h2, .contents_style > h3',
+    supportHeadings: '.contents_style > h2, .contents_style > h3, .contents_style > h4',
 
     /**
      * Headings
@@ -42,6 +42,8 @@ script(once='alpine-content-component').
       this.setPositionToImages()
 
       this.highlightCodeBlocks()
+
+      this.replaceLightbox()
     },
 
     /**
@@ -49,6 +51,21 @@ script(once='alpine-content-component').
      */
     highlightCodeBlocks () {
       this.$article.querySelectorAll('pre code').forEach(hljs.highlightElement)
+    },
+
+    /**
+     * Replace Lightbox to Fancybox
+     */
+    replaceLightbox () {
+      this.$article.querySelectorAll('span').forEach(this.setFancybox)
+    },
+
+    setFancybox ($sp) {
+      if ('lightbox' in $sp.dataset) {
+        delete $sp.dataset.lightbox
+        $sp.dataset.fancybox = 'fancybox'
+        $sp.dataset.src = $sp.getElementsByTagName('img')[0].dataset.src
+      }
     },
 
     /**
@@ -361,7 +378,11 @@ style(once='content')
 
         ol[data-ke-list-type],
         ul[data-ke-list-type] {
-          @apply flex flex-col gap-y-1 list-inside my-5;
+          @apply flex flex-col gap-y-1 list-outside my-5 ml-4;
+
+          li {
+            @apply first-line:block;
+          }
 
           ol[data-ke-list-type],
           ul[data-ke-list-type] {
@@ -387,7 +408,7 @@ style(once='content')
           }
 
           code {
-            @apply relative -top-[1px] px-2 py-0.5 whitespace-normal text-sm font-sans text-h-600 bg-h-200 dark:text-h-300 dark:bg-h-700;
+            @apply relative -top-[1px] px-2 py-0.5 whitespace-normal text-[1rem] text-h-600 bg-h-200 dark:text-h-300 dark:bg-h-700;
           }
         }
 
@@ -399,7 +420,7 @@ style(once='content')
         }
 
         hr {
-          @apply dark:invert dark:brightness-0;
+          @apply dark:invert dark:brightness-0 !cursor-default;
         }
 
         table[data-ke-align] {
@@ -514,7 +535,7 @@ style(once='content')
           }
 
           .btn-toggle-moreless {
-            @apply bg-h-700 text-h-200 text-xs font-bold rounded-md px-3 py-2 inline-block;
+            @apply bg-h-700 text-h-200 text-sm font-bold rounded-md px-3 py-2 inline-block;
 
             &::before {
               @apply mr-1.5 fa-circle-arrow-right;
@@ -534,7 +555,7 @@ style(once='content')
           }
 
           &[data-ke-style=style2] {
-            @apply border-l-2 border-solid border-h-300 dark:border-h-400 pl-3 pr-1 text-h-400 text-left text-sm leading-loose;
+            @apply border-l-2 border-solid border-h-300 dark:border-h-400 pl-3 pr-1 text-h-400 text-left leading-loose;
           }
 
           &[data-ke-style=style3] {
